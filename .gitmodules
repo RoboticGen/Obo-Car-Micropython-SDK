@@ -3,10 +3,6 @@
 	url = https://github.com/micropython/micropython.git
 	brach = master
 
-[submodule "src/obo-car"]
-	path = src/obo-car
-	url = https://github.com/RoboticGen/obo-car.git
-	branch = main
 [submodule "obo-car"]
 	path = src/obo-car
 	url = https://github.com/RoboticGen/obo-car.git

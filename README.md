@@ -15,5 +15,5 @@ The various custom boards will require certain submodules of MicroPython
 itself.  These can be initialised via:
 
     $ cd lib/micropython
-    $ git submodule update --init lib/stm32lib lib/berkeley-db-1.xx
+    $ git submodule update --init lib/berkeley-db-1.xx lib/micropython-lib
     $ cd ../..
