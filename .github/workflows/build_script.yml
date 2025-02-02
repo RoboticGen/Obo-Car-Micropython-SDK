@@ -1,0 +1,53 @@
+name: Build and Patch MicroPython
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-micropython:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+            submodules: 'recursive'
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Intialize Submodules
+        run: git submodule update --init lib/micropython src/obo-car
+
+      - name: Install libraries
+        run: |
+            pushd lib/micropython
+            git submodule update --init lib/berkeley-db-1.xx lib/micropython-lib
+            popd
+    
+
+      - name: Building mpy-cross
+        run: make -C lib/micropython/mpy-cross
+
+      - name: Run patch script
+        run: python3 patch.py
+        
+
+      - name: esp-idf build
+        uses: espressif/esp-idf-ci-action@v1
+        with:
+          esp_idf_version: v5.2.3
+          target: esp32
+          path: 'boards/OBO_CAR'
+          command: 'idf.py set-target esp32 && idf.py build'
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: micropython
+          path: boards/OBO_CAR/build/micropython.bin
