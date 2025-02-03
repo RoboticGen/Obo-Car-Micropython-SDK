@@ -1,4 +1,4 @@
-This directory contains board definition files for an esp32-based board.
+This directory contains board definition files for Obo Car.
 
 To build it make sure the IDF has been installed and the environment set up,
 for example using `export $IDF_PATH/export.sh`.  Then build with:
