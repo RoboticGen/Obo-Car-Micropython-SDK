@@ -1,12 +1,11 @@
 # Micropython Custom Image for Obo Car
-Customized micropython image inbuilt with Obo Car specific modules and configurations for Obo Car.
+Customized Micropython Image inbuilt with Obo Car specific modules and configurations for Obo Car.
 
 
 ![Build Status](https://github.com/RoboticGen/Obo-Car-Micropython-SDK/actions/workflows/build_script.yml/badge.svg)
 ![Issues](https://img.shields.io/github/issues/RoboticGen/Obo-Car-Micropython-SDK)
 ![MicroPython](https://img.shields.io/badge/micropython-v1.23.0-blue)
 ![ESP-IDF](https://img.shields.io/badge/esp--idf-v5.3.2-orange)
-
 ![Board](https://img.shields.io/badge/Obo-Car-blue)
 ![Last Commit](https://img.shields.io/github/last-commit/RoboticGen/Obo-Car-Micropython-SDK)
 
@@ -26,7 +25,7 @@ Customized micropython image inbuilt with Obo Car specific modules and configura
 - [Git](https://git-scm.com/downloads) installed.
 
 > [!TIP]
-> If you have installed Docker, you may use [act](https://nektosact.com/) to run the GitHub Actions locally. 💀✅
+> If you have installed Docker, you may use [act](https://nektosact.com/) to run this GitHub Action locally. 💀✅
 
 ## Installation
 
@@ -43,7 +42,7 @@ Customized micropython image inbuilt with Obo Car specific modules and configura
     git submodule update --init lib/micropython src/obo-car
     ```
 > [!WARNING]
-> Sometimes you may need to checkout the specfic branch or tag of the submodule. Currently micropython is checked out to `v1.23.0` and `obo-car` is checked out to `dev-micropython-image`.be sure to checkout the correct branch or tag.
+> Sometimes you may need to checkout the specfic branch or tag of the submodules. Currently micropython is checked out to `v1.23.0` and `obo-car` is checked out to `dev-micropython-image`.be sure to checkout the correct branch or tag.
 
 4. Install micropython libraries:
     ```bash
@@ -85,4 +84,3 @@ This repository is fork of [micropython-example-boards](https://github.com/micro
 
 ## License
 This project is maintained under MIT License.
-```
