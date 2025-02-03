@@ -27,7 +27,6 @@ with open(OBO_CAR_BOOT_PATH, "r",encoding="utf-8") as file:
         )
     '''
 
-print(replacement)
 # Substitute the content inside the f.write() block
 new_data = re.sub(pattern, replacement, data)
 
