@@ -3,7 +3,7 @@ name: Build and Patch MicroPython
 on:
   push:
     branches:
-      - feature/obocar-board-integration
+      - main
   pull_request:
 
 jobs:
