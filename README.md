@@ -2,9 +2,11 @@
 Customized micropython image inbuilt with Obo Car specific modules and configurations for Obo Car.
 
 
-![Build Status](https://github.com/RoboticGen/Obo-Car-Micropython-SDK/actions/workflows/build.yml/badge.svg)
+![Build Status](https://github.com/RoboticGen/Obo-Car-Micropython-SDK/actions/workflows/build_script.yml/badge.svg)
 ![Issues](https://img.shields.io/github/issues/RoboticGen/Obo-Car-Micropython-SDK)
 ![MicroPython](https://img.shields.io/badge/micropython-v1.23.0-blue)
+![ESP-IDF](https://img.shields.io/badge/esp--idf-v5.3.2-orange)
+
 ![Board](https://img.shields.io/badge/Obo-Car-blue)
 ![Last Commit](https://img.shields.io/github/last-commit/RoboticGen/Obo-Car-Micropython-SDK)
 
