@@ -2,3 +2,7 @@
 	path = lib/micropython
 	url = https://github.com/micropython/micropython.git
 	brach = master
+[submodule "obo-sdk"]
+	path = src/obo-car
+	url = https://github.com/RoboticGen/obo-car-sdk.git
+	branch = dev/micropython-image
