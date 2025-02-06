@@ -78,9 +78,16 @@ Customized Micropython Image inbuilt with Obo Car specific modules and configura
     ```
     Replace `<PORT>` with the port where the Obo-Car is connected.
 
+## Latest Release
+
+> [!TIP]
+> You can download the latest release from [here](https://go.roboticgen.co/micropython-image) or you can find it in the [releases](https://github.com/RoboticGen/Obo-Car-Micropython-SDK/releases/latest) section.
+
 
 ## Credits
 This repository is fork of [micropython-example-boards](https://github.com/micropython/micropython-example-boards)
 
 ## License
 This project is maintained under MIT License.
+
+
