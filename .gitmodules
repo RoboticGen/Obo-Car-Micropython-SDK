@@ -2,13 +2,3 @@
 	path = lib/micropython
 	url = https://github.com/micropython/micropython.git
 	brach = master
-
-
-[submodule "obo-car"]
-	path = src/obo-car
-	url = https://github.com/RoboticGen/obo-car.git
-	branch = dev-micropython-image
-[submodule "src/obo-car"]
-	path = src/obo-car
-	url = https://github.com/RoboticGen/obo-car.git
-	branch = dev-micropython-image
