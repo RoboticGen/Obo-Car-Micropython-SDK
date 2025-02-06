@@ -9,6 +9,8 @@ on:
 jobs:
   build-micropython:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write 
 
     steps:
       - name: Checkout Repository
@@ -26,9 +28,12 @@ jobs:
       - name: Install libraries
         run: |
             pushd lib/micropython
-            git submodule update --init lib/berkeley-db-1.xx lib/micropython-lib
+            git submodule update --init lib/berkeley-db-1.xx lib/micropython-lib 
             popd
-    
+
+      - name: Get Version Tag
+        id: version_tag
+        run: echo "tag=v$(date +'%Y.%m.%d')-build-${GITHUB_RUN_NUMBER}" >> $GITHUB_OUTPUT
 
       - name: Building mpy-cross
         run: make -C lib/micropython/mpy-cross
@@ -50,3 +55,23 @@ jobs:
         with:
           name: micropython
           path: boards/OBO_CAR/build/micropython.bin
+
+      - name: Create release
+        id: create-new-obo-car-image-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.version_tag.outputs.tag }}
+        run: |
+          gh release create "${{ steps.version_tag.outputs.tag }}" \
+              --repo="$GITHUB_REPOSITORY" \
+              --title="Obo Car Micropython - ${{ steps.version_tag.outputs.tag }}" \
+              --generate-notes
+
+
+      - name: Upload Binary to Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "${{steps.version_tag.outputs.tag }}" \
+              boards/OBO_CAR/build/micropython.bin 
+
