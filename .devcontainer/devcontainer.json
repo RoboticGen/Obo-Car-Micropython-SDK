@@ -1,0 +1,5 @@
+{
+	"name": "Espressif IDF Dev Container",
+	"dockerFile": "Dockerfile"
+  }
+  
